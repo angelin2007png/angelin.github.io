@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feliz Cumpleaños Majito</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f9a9c3;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+    }
+
+    h1 {
+      margin-top: 0;
+      background: #333;
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 2.2rem;
+    }
+
+    .cake-wrapper {
+      position: relative;
+      margin-top: 30px;
+    }
+
+    .cake-body {
+      width: 200px;
+      height: 100px;
+      background: #8b5e3c;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .icing {
+      background: #fff;
+      width: 100%;
+      height: 30px;
+      position: absolute;
+      top: 0;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+
+    .candle {
+      background: #ffffff;
+      border-radius: 10px;
+      position: absolute;
+      width: 5px;
+      height: 35px;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%) translateY(0); /* sin animación retrasada */
+    }
+
+    .candle:before,
+    .candle:after {
+      background: rgba(255, 0, 0, 0.4);
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2.22222222px;
+    }
+
+    .flame {
+      width: 6px;
+      height: 10px;
+      background: radial-gradient(circle, yellow 0%, orange 60%, transparent 100%);
+      border-radius: 50%;
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flame-flicker 0.3s infinite alternate;
+    }
+
+    .plate {
+      width: 220px;
+      height: 10px;
+      background: #fff;
+      border-radius: 5px;
+      margin: 10px auto 20px;
+    }
+
+    .message {
+      color: #5e2a2a;
+      font-size: 1.1rem;
+      text-align: center;
+      max-width: 90%;
+      line-height: 1.5;
+      padding: 10px 20px;
+    }
+
+    .music-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #d14c6c;
+      border: 2px solid #d14c6c;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    @keyframes flame-flicker {
+      0% { transform: translateX(-50%) scale(1); opacity: 1; }
+      100% { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 ¡Feliz Cumpleaños Majito! 🎉</h1>
+  <div class="cake-wrapper">
+    <div class="cake-body">
+      <div class="icing"></div>
+      <div class="candle">
+        <div class="flame"></div>
+      </div>
+    </div>
+    <div class="plate"></div>
+    <div class="message">
+      feliz cumpleaños Majito, te amo milochomil, ya un añote más,<br>
+      espero te la pases super bien hoy y sabes que cuentas conmigo para todo,<br>
+      siempre siempre estaré para ti, te amo con todo mi ser 💖 &lt;3
+    </div>
+  </div>
+
+  <!-- Botón para reproducir música -->
+  <button class="music-button" onclick="document.getElementById('song').play()">
+    ▶️ Reproducir canción de Plim Plim
+  </button>
+
+  <audio id="song" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3"></audio>
+</body>
+</html>
